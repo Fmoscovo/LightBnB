@@ -1,0 +1,48 @@
+# Entities and Attributes:
+
+## users:
+- id (Primary Key, Unique Identifier)
+- name (User's Name)
+- email (User's Email Address)
+- password (User's Password)
+
+## properties:
+- id (Primary Key, Unique Identifier)
+- owner_id (Foreign Key, References the id of the owner from the users table)
+- title (Property Title)
+- description (Property Description)
+- costpernight (Property Rental Cost Per Night)
+- parking_spaces (Number of Parking Spaces)
+- numberofbathrooms (Number of Bathrooms)
+- numberofbedrooms (Number of Bedrooms)
+- thumbnail_photo_url (URL for Small Thumbnail Photo)
+- cover_photo_url (URL for Large Cover Photo)
+- country (Property Country)
+- street (Property Street)
+- city (Property City)
+- province (Property Province)
+- post_code (Property Postal Code)
+- is_active (Boolean, Indicates if the Property is Active)
+
+## reservations:
+- id (Primary Key, Unique Identifier)
+- start_date (Reservation Start Date)
+- end_date (Reservation End Date)
+- guest_id (Foreign Key, References the id of the guest from the users table)
+- property_id (Foreign Key, References the id of the property from the properties table)
+
+## property_reviews:
+- id (Primary Key, Unique Identifier)
+- guest_id (Foreign Key, References the id of the guest from the users table)
+- reservation_id (Foreign Key, References the id of the reservation from the reservations table)
+- message (Review Message)
+- rating (Review Rating from 1 to 5)
+
+# Relationships:
+
+- One-to-Many relationship between "users" and "properties" (One user can own many properties).
+- Many-to-One relationship between "properties" and "users" (One property belongs to one owner).
+- One-to-Many relationship between "users" and "reservations" (One user can make many reservations).
+- Many-to-One relationship between "reservations" and "users" (One reservation belongs to one guest).
+- One-to-Many relationship between "properties" and "reservations" (One property can have multiple reservations).
+- One-to-Many relationship between "reservations" and "property_reviews" (One reservation can have multiple property reviews).
