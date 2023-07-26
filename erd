@@ -46,3 +46,12 @@
 - Many-to-One relationship between "reservations" and "users" (One reservation belongs to one guest).
 - One-to-Many relationship between "properties" and "reservations" (One property can have multiple reservations).
 - One-to-Many relationship between "reservations" and "property_reviews" (One reservation can have multiple property reviews).
+
+
+<!-- 
+-- my db
+-- users (name, email, password)
+-- properties (owner_id, title, description, thumbnail_photo_url, cover_photo_url, cost_per_night, parking_spaces, number_of_bathrooms, number_of_bedrooms, country, street, city, province, post_code, active)
+-- reservations (start_date, end_date, property_id, guest_id)
+-- property_reviews (guest_id, property_id, reservation_id, rating, message)
+ -->
